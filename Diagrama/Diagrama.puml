@@ -1,0 +1,34 @@
+@startuml
+class Endereco {
+    -String logradouro
+    -Integer numero
+    -String bairro
+    +Endereco(String logradouro, String bairro, Integer numero)
+    +String getLogradouro()
+    +void setLogradouro(String logradouro)
+    +Integer getNumero()
+    +void setNumero(Integer numero)
+    +String getBairro()
+    +void setBairro(String bairro)
+    +Object clone()
+    +String toString()
+}
+
+class Cliente {
+    -String nome
+    -String email
+    -Endereco endereco
+    +Cliente(String nome, String email, Endereco endereco)
+    +String getNome()
+    +void setNome(String nome)
+    +String getEmail()
+    +void setEmail(String email)
+    +Endereco getEndereco()
+    +void setEndereco(Endereco endereco)
+    +Cliente clone()
+    +String toString()
+}
+
+Cliente "1" *-- "1" Endereco : contains
+
+@enduml
